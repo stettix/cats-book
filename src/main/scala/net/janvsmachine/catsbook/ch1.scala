@@ -28,6 +28,15 @@ object Printable {
     println(p.format(value))
 }
 
+final case class Cat(name: String, age: Int, colour: String)
+
+object Cat {
+
+  implicit val catPrintable: Printable[Cat] = new Printable[Cat] {
+    override def format(cat: Cat) = s"${cat.name} is a ${cat.age} year-old ${cat.colour} cat"
+  }
+}
+
 object Runner extends App {
 
   import PrintableInstances._
@@ -38,5 +47,9 @@ object Runner extends App {
 
   Printable.print("Bar")
   Printable.print("561")
+
+  val juno = Cat("Juno", 3, "gray")
+
+  Printable.print(juno)
 
 }
