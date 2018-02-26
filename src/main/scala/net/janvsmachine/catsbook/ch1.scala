@@ -45,11 +45,13 @@ object Cat {
 }
 
 object PrintableSyntax {
+
   implicit class PrintableOps[A](underlying: A) {
     def format(implicit p: Printable[A]): String = Printable.format(underlying)
 
     def print()(implicit p: Printable[A]): Unit = Printable.print(underlying)
   }
+
 }
 
 object Runner extends App {
@@ -69,5 +71,14 @@ object Runner extends App {
 
   juno.print()
   println(juno.format)
+
+  import cats._
+  import cats.implicits._
+
+  implicit val catsShowable: Show[Cat] = Show.show((cat: Cat) =>
+    s"${cat.name.show} is a ${cat.age.show} year-old ${cat.colour.show} cat"
+  )
+
+  println(juno.show)
 
 }
