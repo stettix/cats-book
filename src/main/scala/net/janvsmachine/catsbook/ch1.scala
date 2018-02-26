@@ -37,6 +37,14 @@ object Cat {
   }
 }
 
+object PrintableSyntax {
+  implicit class PrintableOps[A](underlying: A) {
+    def format(implicit p: Printable[A]): String = Printable.format(underlying)
+
+    def print()(implicit p: Printable[A]): Unit = Printable.print(underlying)
+  }
+}
+
 object Runner extends App {
 
   import PrintableInstances._
@@ -50,6 +58,9 @@ object Runner extends App {
 
   val juno = Cat("Juno", 3, "gray")
 
-  Printable.print(juno)
+  import PrintableSyntax._
+
+  juno.print()
+  println(juno.format)
 
 }
