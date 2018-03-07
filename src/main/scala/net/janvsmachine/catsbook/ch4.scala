@@ -9,6 +9,9 @@ object HomebrewMonads {
 
     def flatMap[A, B](value: F[A])(f: A => F[B]): F[B]
 
+    def map[A, B](value: F[A])(f: A => B): F[B] =
+      flatMap(value)(x => pure(f(x)))
+
   }
 
   implicit val optionMonadInstance: Monad[Option] = new Monad[Option] {
@@ -52,6 +55,8 @@ object MonadExampleRunner extends App {
   val keepIfEven = (x: Int) => if (x % 2 == 0) List(x) else List.empty
 
   println(listMonad.flatMap(list1)(dupe))
+
+  println(listMonad.map(list1)((x: Int) => x * 2))
 
   val listLaws = new MonadLaws[List] {}
 
