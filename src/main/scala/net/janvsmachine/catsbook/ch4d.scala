@@ -24,17 +24,15 @@ object ch4d extends App {
 
   val res: Logged[Int] = factorial(5)
   val (logs, value) = res.run
-  println(s"V2: Logs = $logs, result = $value")
+  println(s"Logs = $logs, result = $value")
 
-  println("...")
+  val asyncRes: Seq[Logged[Int]] = Await.result(Future.sequence(Vector(
+    Future(factorial(5)), Future(factorial(5))
+  )), 10.seconds)
 
-    val asyncRes: Seq[Logged[Int]] = Await.result(Future.sequence(Vector(
-      Future(factorial(5)), Future(factorial(5))
-    )), 10.seconds)
-
-    asyncRes.foreach { r =>
-      val (logs, value) = r.run
-      println(s"Value: $value, logs: ${logs.mkString(", ")}")
-    }
+  asyncRes.foreach { r =>
+    val (logs, value) = r.run
+    println(s"Value: $value, logs: ${logs.mkString(", ")}")
+  }
 
 }
