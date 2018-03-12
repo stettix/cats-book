@@ -1,10 +1,10 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter3
 
 import cats.Functor
 import cats.instances.list._
 import cats.instances.option._
 
-object ch3b extends App {
+object FunctorExamples extends App {
 
   // Footling around with cats Functors.
 

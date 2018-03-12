@@ -1,9 +1,9 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter3
 
 import cats.Functor
 import cats.syntax.functor._
 
-object ch3c extends App {
+object TreeExample extends App {
 
   sealed trait Tree[+A]
 

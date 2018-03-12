@@ -1,15 +1,14 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
 import cats.Monad
-import cats.instances.option._
 import cats.instances.list._
-
+import cats.instances.option._
 import cats.syntax.applicative._
 import cats.syntax.flatMap._
 import cats.syntax.functor._
 
 
-object ch4b extends App {
+object MonadBasics extends App {
 
   val opt1 = Monad[Option].pure(42)
 
@@ -29,7 +28,7 @@ object ch4b extends App {
   println("Sum squared: "  + sumSquared(Option(2), Option(3)))
   println(sumSquared(Option(3), Option.empty[Int]))
 
-  // AND: play around with the Id monad in relation to this.
+  // Play around with the Id monad.
 
   import cats.Id
   println("Via Identity monad: " + sumSquared(2 : Id[Int], 3: Id[Int]))

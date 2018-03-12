@@ -1,4 +1,6 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter2
+
+import net.janvsmachine.catsbook.chapter2.HomebrewMonoids.Monoid
 
 object HomebrewMonoids {
 
@@ -47,10 +49,8 @@ object HomebrewMonoids {
 
 object MonoidRunner extends App {
 
-  import net.janvsmachine.catsbook.HomebrewMonoids._
-
   //  import MonoidInstances.intAddInstance
-  import MonoidInstances.intMultiplicationInstance
+  import HomebrewMonoids.MonoidInstances.intMultiplicationInstance
 
   val m = Monoid[Int]
 

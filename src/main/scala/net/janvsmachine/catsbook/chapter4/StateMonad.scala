@@ -1,9 +1,9 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
 import cats.data.State
-import State._
+import cats.data.State._
 
-object ch4f extends App {
+object StateMonad extends App {
 
   // Noodling around with state monads.
 

@@ -1,5 +1,4 @@
-package net.janvsmachine.catsbook
-
+package net.janvsmachine.catsbook.chapter4
 
 object HomebrewMonads {
 

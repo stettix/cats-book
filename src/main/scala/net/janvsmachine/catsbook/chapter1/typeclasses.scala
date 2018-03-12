@@ -1,4 +1,4 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter1
 
 trait Printable[A] {
 

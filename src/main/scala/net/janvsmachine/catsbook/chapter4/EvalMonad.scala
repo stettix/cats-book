@@ -1,8 +1,8 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
 import cats.Eval
 
-object ch4c extends App {
+object EvalMonad extends App {
 
   // Playing around with the Eval monad.
 

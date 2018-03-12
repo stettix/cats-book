@@ -1,13 +1,9 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
 import cats.data.Reader
 import cats.syntax.applicative._
 
-//
-// Reader Monad example exercise.
-//
-
-object ch4e extends App {
+object ReaderMonad extends App {
 
   case class Db(users: Map[Int, String], passwords: Map[String, String])
 

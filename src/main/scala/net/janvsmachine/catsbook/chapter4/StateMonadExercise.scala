@@ -1,10 +1,10 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
-import cats.data.{NonEmptyList, State}
-import State._
+import cats.data.State
+import cats.data.State._
 import cats.syntax.applicative._
 
-object ch4g extends App {
+object StateMonadExercise extends App {
 
   type CalcState[A] = State[List[Int], A]
 

@@ -1,4 +1,4 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter3
 
 object HomebrewFunctors extends App {
 

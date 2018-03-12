@@ -1,4 +1,4 @@
-package net.janvsmachine.catsbook
+package net.janvsmachine.catsbook.chapter4
 
 import cats.data.Writer
 import cats.instances.vector._
@@ -10,7 +10,7 @@ import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 
 
-object ch4d extends App {
+object WriterMonad extends App {
 
   def slowly[A](op: => A): A =
     try op finally Thread.sleep(100)
